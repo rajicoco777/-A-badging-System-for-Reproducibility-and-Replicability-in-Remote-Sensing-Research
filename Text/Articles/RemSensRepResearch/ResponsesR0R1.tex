@@ -1,0 +1,201 @@
+\RequirePackage{xr}
+\externaldocument{GradingReproducibilityRS_R0}
+
+\documentclass[journal,onecolumn,12pt]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{wasysym}
+\usepackage{texnames}
+\usepackage{url}
+
+\usepackage[listings]{tcolorbox}
+
+\usepackage[binary-units]{siunitx}
+\usepackage{multirow,bigstrut}
+
+\usepackage{merriweather}
+
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+	\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+			\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+			\begin{picture}(1,1)% %DIF PREAMBLE
+			\thicklines\linethickness{2pt} %DIF PREAMBLE
+			{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+			{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+			{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+			\end{picture}% %DIF PREAMBLE
+		}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+language=DIFcode, %DIF PREAMBLE
+basicstyle=\ttfamily, %DIF PREAMBLE
+columns=fullflexible, %DIF PREAMBLE
+keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+\title{A Badging System for Reproducibility and Replicability in Remote Sensing Research\\
+	Revision R1}
+
+\author{Alejandro~C.~Frery,~\IEEEmembership{Senior Member,~IEEE,}
+	Luis~Gomez,~\IEEEmembership{Senior Member,~IEEE,}
+	and~Antonio~C.~Medeiros}
+
+\markboth{IEEE Journal of Selected Topics on Applied Earth Observations and Remote Sensing}%
+{Frery \MakeLowercase{\textit{et al.}}: Badging Reproducibility and Replicability}
+
+\maketitle
+
+\IEEEpeerreviewmaketitle
+
+\section{Editor-in-Chief}
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Comment \#1]
+Your manuscript JSTARS-2020-00567 Proposal of a Badging System for Reproducibility and Replicability in Remote Sensing Research has been reviewed by the J-STARS Editorial Review Board and recommended for publication subject to satisfactory response to minor revisions suggested. It is recommended that you resubmit your manuscript as revised in accordance with the Editorial Review Board comments given below.
+\end{tcolorbox}
+
+Thank you very much for handling this manuscript.
+
+We have prepared a revised version taking into account all the comments and suggestions made by the reviewers.
+
+This response letter addresses all the comments in red, followed by
+our reactions, and, whenever necessary, the changes made.
+
+Please notice that we included a ``Disclaimer and non-affiliation'' section.
+It is our understanding that it is necessary, since we make explicit mention of the IEEE Geoscience and Remote Sensing Society, and of trademarked products.
+
+We improved the presentation of the Scientific Canvas, adding colors to lists related to the same aspect of the project.
+
+We also include the \texttt{diff} article between the prior and current versions, where deletions are in red and additions are in blue.
+
+\section{Associate Editor}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Comment \#1]
+This manuscript has some merit, however it is not in a fine shape for consideration of acceptance in its current shape. As being pointed out in the review reports, it should be further improved in terms of the writing. Please refer to the detailed comments. It is suggested to remove "Proposal of" in the paper title.
+\end{tcolorbox}
+
+Thank you very much.
+We changed the title accordingly.
+To the best of our knowledge, we have addressed all the comments and suggestions.
+
+\section{Reviewer \#1}
+
+
+\vskip3em\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Comment \#1]
+Reviewing the web content pack of submitted paper requires richer academic knowledge. The authors should discuss whether such a badging system will affect the difficulty of peer review.
+\end{tcolorbox}
+
+We wholeheartedly agree with this comment.
+We enhanced the discussion of the role and composition of the Remote Sensing Reproducibility Committee (Section~IV.B), by adding the following:
+
+\begin{tcolorbox}[colback=white,colframe=black,title=Changes \#1]
+The role of such committee is solely verifying the reproducibility of the article and, thus, the expertise of their members might also be from outside the Remote Sensing community.
+\end{tcolorbox}
+
+
+
+\vskip3em\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Comment \#2]
+The author's current badging system only makes differences based on FLOSS. Why not use a more detailed evaluation system? Some works may mainly contribute to datasets or conception, where codes and open source state are not very crucial for these works.
+\end{tcolorbox}
+
+Thank you very much for this suggestion.
+The proposal includes the use of Open data, and we took the opportunity to enhance its discussion in Section~IV.A.3.
+Also, notice in Fig.~3 that Open data is a requirement for aspiring to a Remote Sensing Reproducible Research badge.
+
+\begin{tcolorbox}[colback=white,colframe=black,title=Changes \#2]
+Although Open data are not necessarily free data, the authors must at least provide a minimum of free samples, and the tools to read and export them to freely available computational platforms.
+\end{tcolorbox}
+
+
+\vskip3em\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Comment \#3]
+For some popular topics, different works may share a large amount of content other than papers, such as datasets, evaluation codes, or mind maps. Should these not completely original content be considered separately in the badging system?
+\end{tcolorbox}
+
+Thank you very much for this suggestion.
+In fact, our projects include more elements, and they have proven their usefulness.
+Motivated by this comment, we added a new Section~IV.A.7 (``Additional artifacts'') with the following contents:
+
+\begin{tcolorbox}[colback=white,colframe=black,title=Changes \#3]
+Current collaborative research usually produces artifacts that may contribute to the replicability of the research.
+Among them, we may mention 
+Mind Maps, 
+Project Management files, 
+Wikis, 
+and a bug tracking database as Bugzilla.
+All these elements, well documented, may be added to the paper repository for optional scrutiny and use.
+\end{tcolorbox}
+
+
+
+\section{Reviewer \#2}
+
+\vskip3em\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Comment \#3]
+The paper is well written, and I think the authors propose a new direction for remote sensing, therefore I would suggest the acceptance of the paper.
+\end{tcolorbox}
+
+Thank you very much for your positive feedback.
+
+\end{document}
+
